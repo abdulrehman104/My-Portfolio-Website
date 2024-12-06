@@ -153,7 +153,7 @@ export const AboutSection = () => {
                     className="flex items-center p-4 rounded-lg border border-muted-foreground font-semibold "
                   >
                     {skill.icon}
-                    <span className="text-gray-400">{skill.name}</span>
+                    <span className="text-gray-400 text-base">{skill.name}</span>
                   </Button>
                 ))}
               </div>
