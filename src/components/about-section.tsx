@@ -150,10 +150,10 @@ export const AboutSection = () => {
                   <Button
                     key={idx}
                     variant="ghost"
-                    className="flex items-center p-4 rounded-lg border border-muted-foreground text-gray-400 text-base font-semibold "
+                    className="flex items-center p-4 rounded-lg border border-muted-foreground font-semibold "
                   >
                     {skill.icon}
-                    <span>{skill.name}</span>
+                    <span className="text-gray-400">{skill.name}</span>
                   </Button>
                 ))}
               </div>
