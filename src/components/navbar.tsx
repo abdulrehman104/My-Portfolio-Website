@@ -13,7 +13,7 @@ export const Navbar = () => {
           href="/"
           className="text-[#8A7FF8] text-2xl font-bold flex items-center gap-x-2"
         >
-          <Image src="/plura.svg" alt="Portfolio LOGO" width={50} height={50} />
+          <Image src="/web/logo.svg" alt="Portfolio LOGO" width={50} height={50} />
           <span>A.Rehman</span>
         </Link>
 
