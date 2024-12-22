@@ -15,6 +15,7 @@ export const FooterSection = () => {
           <div className="flex gap-6">
             {socialLinks.map((items) => (
               <Link
+                target="_blank"
                 href={items.href}
                 key={items.label}
                 className="text-gray-400 hover:text-white transition-colors"
@@ -23,9 +24,14 @@ export const FooterSection = () => {
               </Link>
             ))}{" "}
           </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-          {/* Navigation */}
-          <nav className="flex gap-6">
+{
+  /* <nav className="flex gap-6">
             <Link
               href="/"
               className="text-gray-400 hover:text-white transition-colors"
@@ -56,9 +62,5 @@ export const FooterSection = () => {
             >
               Testimonials
             </Link>
-          </nav>
-        </div>
-      </div>
-    </footer>
-  );
-};
+          </nav> */
+}

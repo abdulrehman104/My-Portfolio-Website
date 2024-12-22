@@ -17,7 +17,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { FooterCard } from "@/components/footer-card";
+import { useState } from "react";
+import axios from "axios";
+import { toast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -35,6 +37,8 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -45,8 +49,35 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // WIP: Add Api to et email to you
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await axios.post(`/api/contact`, values);
+
+      if (response.status === 200) {
+        console.log("Form submitted successfully");
+        form.reset();
+        toast({
+          title: "Form Submitted",
+          description: "Thank you for submitting the form.",
+        });
+      } else {
+        console.error("Failed to submit form");
+        toast({
+          title: "Submission Failed",
+          description: "An error occurred. Please try again.",
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form", error);
+      toast({
+        title: "Submission Error",
+        description: "An unexpected error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
@@ -175,8 +206,9 @@ export default function ContactForm() {
                     <Button
                       type="submit"
                       className="w-full bg-gradient-to-r from-[#8A7FF8] to-[#FF3BFF] hover:opacity-90 text-white py-6"
+                      disabled={isSubmitting}
                     >
-                      Submit
+                      {isSubmitting ? "Submitting..." : "Submit"}
                     </Button>
                   </form>
                 </Form>

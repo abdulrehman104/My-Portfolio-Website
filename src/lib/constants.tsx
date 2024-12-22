@@ -26,6 +26,7 @@ import {
   SiFramer,
   SiAuth0,
   SiContentful,
+  SiLinktree,
 } from "react-icons/si";
 import {
   FaFacebook,
@@ -48,7 +49,7 @@ export const navLinks = [
   {
     number: "02.",
     name: "About",
-    link: `/`,
+    link: `#about`,
   },
   {
     number: "03.",
@@ -63,7 +64,7 @@ export const navLinks = [
   {
     number: "05.",
     name: "Testimonials",
-    link: `/`,
+    link: `#testimonials`,
   },
 ];
 
@@ -219,16 +220,15 @@ export const skillGroups = [
 
 export const experiences = [
   {
-    name: "Seven Solution",
+    name: "EverDream Solution",
     role: "CEO & Founder",
-    url: "https://www.linkedin.com/in/abdulrehman104/",
+    url: "https://linktr.ee/everdreamsolutions",
     start: "December 2024",
     end: "Present",
     shortDescription: [
-      "Established and grew a company providing innovative full-stack development and AI solutions.",
+      "Established and grew a company providing innovative Web Development, Digital Marketing, SEO & Graphic Designing services.",
       "Led a team of developers and designers to deliver high-quality software for clients worldwide.",
       "Focused on incorporating the latest technologies like AI and cloud computing into solutions.",
-      "Spearheaded strategic partnerships and collaborations to drive business growth.",
     ],
   },
   {
@@ -238,10 +238,10 @@ export const experiences = [
     start: "July 2024",
     end: "Present",
     shortDescription: [
-      "Delivered customized full-stack applications using modern technologies like React, Node.js, and TypeScript.",
-      "Optimized and maintained large codebases, enhancing functionality and performance.",
-      "Collaborated with global clients to develop scalable and efficient software solutions.",
-      "Provided technical guidance to team members and ensured project deadlines were met.",
+      "Provided full-stack development services, building web applications using technologies like React, Next.js, Node.js, and TypeScript.",
+      "Collaborated with international clients to deliver scalable and efficient web development solutions.",
+      "Delivered high-quality projects within deadlines, enhancing client satisfaction and trust.",
+      "Offered technical support and consultation to team members and clients during development cycles.",
     ],
   },
   {
@@ -251,23 +251,10 @@ export const experiences = [
     start: "March 2024",
     end: "August 2024",
     shortDescription: [
-      "Co-founded a tech startup focused on delivering cutting-edge web and mobile applications.",
-      "Oversaw product development and deployment processes to meet client expectations.",
-      "Led a cross-functional team to ensure smooth operations and high-quality deliverables.",
-      "Played a key role in securing investments and building client relationships.",
-    ],
-  },
-  {
-    name: "Icon Design",
-    role: "Front-end Development",
-    url: "",
-    start: "November 2023",
-    end: "July 2024",
-    shortDescription: [
-      "Developed responsive and dynamic user interfaces for web applications using React and TypeScript.",
-      "Collaborated with designers to create visually appealing and user-friendly websites.",
-      "Ensured code quality and best practices by writing maintainable and scalable code.",
-      "Implemented SEO-friendly features and optimized website performance.",
+      "Co-founded an initiative focused on teaching Full Stack Development to aspiring developers.",
+      "Taught Full Stack Development, covering modern web technologies and best practices.",
+      "Managed the company's social media accounts to enhance online visibility and engagement.",
+      "Played a key role in organizing and delivering educational programs for students.",
     ],
   },
   {
@@ -277,10 +264,11 @@ export const experiences = [
     start: "July 2022",
     end: "February 2022",
     shortDescription: [
-      "Identified and pursued new sales opportunities, driving revenue growth.",
-      "Built relationships with potential clients and converted leads into long-term partnerships.",
-      "Developed and implemented strategies to achieve monthly sales targets.",
-      "Conducted market research to identify trends and opportunities for business expansion.",
+      "Generated leads through various platforms, including social media, freelancing sites, and online communities.",
+      "Created and managed strategies to identify and connect with potential clients effectively.",
+      "Built a network of prospects, converting them into valuable customers through tailored proposals.",
+      "Collaborated with the sales team to achieve and exceed monthly revenue targets.",
+      "Conducted competitive analysis and market research to refine sales techniques and identify opportunities.",
     ],
   },
 ];
@@ -323,7 +311,7 @@ interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    text: "Working with [Developer's Name] was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
+    text: "Working with Abdul Rehman was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
     author: "Jackie Williams",
     role: "Founder & CEO",
     company: "Dualix",
@@ -331,7 +319,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    text: "Working with [Developer's Name] was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
+    text: "Working with Abdul Rehman was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
     author: "Steve Jonas",
     role: "Founder & CEO",
     company: "Dualix",
@@ -339,7 +327,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    text: "Working with [Developer's Name] was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
+    text: "Working with Abdul Rehman was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
     author: "Sarah Parker",
     role: "Founder & CEO",
     company: "Dualix",
@@ -373,5 +361,10 @@ export const socialLinks = [
     icon: FaThreads,
     href: "https://threads.net/@abdul_rehman_104",
     label: "Threads",
+  },
+  {
+    icon: SiLinktree,
+    href: "https://linktr.ee/abdulrehman104",
+    label: "Linktree",
   },
 ];

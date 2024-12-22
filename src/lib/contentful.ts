@@ -9,6 +9,12 @@ export const createContentClient = () => {
 
 export const client = createContentClient();
 
+// ===================== Get All Testimonials Data In Contentful =====================
+export const getTestimonialsEntries = async () => {
+  const entries = await client.getEntries({ content_type: "testimonials" });
+  return entries;
+};
+
 // ===================== Get All Services Data In Contentful =====================
 export const getServicesEntries = async () => {
   const entries = await client.getEntries({ content_type: "services" });
@@ -31,7 +37,7 @@ export const getProjectsEntries = async () => {
   return entries;
 };
 
-// ===================== Get Single Data In Contentful =====================
+// ===================== Get Projects Data In Contentful =====================
 export const getProjectEntryBySlug = async (slug: string, type: string) => {
   const queryOptions = {
     content_type: type,
@@ -40,3 +46,4 @@ export const getProjectEntryBySlug = async (slug: string, type: string) => {
   const queryResult = await client.getEntries(queryOptions);
   return queryResult.items[0];
 };
+

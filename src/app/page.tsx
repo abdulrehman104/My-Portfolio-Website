@@ -6,7 +6,7 @@ import { TestimonialsSection } from "@/components/testimonials";
 import { FooterCard } from "@/components/footer-card";
 
 export default function Home() {
-return (        
+  return (
     <>
       <HeroSection />
       <AboutSection />

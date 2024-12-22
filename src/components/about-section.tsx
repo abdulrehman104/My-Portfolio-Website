@@ -5,12 +5,13 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { experiences, skillGroups } from "@/lib/constants";
+import Link from "next/link";
 
 export const AboutSection = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
-    <section className="py-12">
+    <section className="py-12" id="about">
       {/* About Section */}
       <div className="flex flex-col items-center justify-center lg:items-start lg:justify-start mb-12">
         <h2 className="text-white text-lg font-semibold uppercase tracking-wider mb-4 text-center md:text-start">
@@ -109,7 +110,9 @@ export const AboutSection = () => {
               >
                 <h3 className="text-gray-200 font-mono text-2xl mb-1 font-semibold">
                   {experience.role}{" "}
-                  <span className="text-[#8A7FF8]">@ {experience.name}</span>
+                  <Link href={experience.url} target="_blank">
+                    <span className="text-[#8A7FF8]">@ {experience.name}</span>
+                  </Link>
                 </h3>
                 <p className="text-gray-400 font-mono mb-6 font-bold">
                   {experience.start} - {experience.end}
@@ -153,7 +156,9 @@ export const AboutSection = () => {
                     className="flex items-center p-4 rounded-lg border border-muted-foreground font-semibold "
                   >
                     {skill.icon}
-                    <span className="text-gray-400 text-base">{skill.name}</span>
+                    <span className="text-gray-400 text-base">
+                      {skill.name}
+                    </span>
                   </Button>
                 ))}
               </div>
