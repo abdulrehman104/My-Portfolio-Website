@@ -20,7 +20,7 @@ export default async function MyWork() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
         {all_projects.map((project) => {
           // @ts-ignore
           const imageUrl = project.fields.image.fields.file.url;
@@ -32,13 +32,16 @@ export default async function MyWork() {
               key={project.sys.id}
               className="rounded-lg shadow-lg overflow-hidden"
             >
-              <Image
-                src={`https:${imageUrl}`} // Prefix with 'https:'
-                alt={imageTitle}
-                width={500}
-                height={500}
-                className="object-cover"
-              />
+              <aside>
+                <Image
+                  src={`https:${imageUrl}`}
+                  alt={imageTitle}
+                  width={600}
+                  height={400}
+                  layout="responsive"
+                  objectFit="cover"
+                />
+              </aside>
               <div className="py-6">
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {project.fields.title as string}

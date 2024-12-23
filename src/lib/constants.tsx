@@ -235,7 +235,7 @@ export const experiences = [
     name: "Upwork",
     role: "Full Stack Developer",
     url: "https://www.upwork.com/freelancers/~01366e75e7b399839f",
-    start: "July 2024",
+    start: "May 2024",
     end: "Present",
     shortDescription: [
       "Provided full-stack development services, building web applications using technologies like React, Next.js, Node.js, and TypeScript.",
