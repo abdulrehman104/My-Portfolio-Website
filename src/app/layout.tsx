@@ -6,6 +6,9 @@ import { LeftSide } from "@/components/left-side";
 import { Navbar } from "@/components/navbar";
 import { FooterSection } from "@/components/footer-section";
 import { Toaster } from "@/components/ui/toaster";
+import { draftMode } from "next/headers";
+import { DisableDraftMode } from "@/components/disable-draft-mode";
+import { VisualEditing } from "next-sanity";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
   description: "Full Stack Developer, AbdulRehman",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -22,6 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jakarta.className} bg-[#05051D] text-white`}>
+        {(await draftMode()).isEnabled && (
+          <>
+            <DisableDraftMode />
+            <VisualEditing />
+          </>
+        )}
         <div className="hidden xl:inline-flex w-32 h-full fixed left-0 bottom-0">
           <LeftSide />
         </div>
