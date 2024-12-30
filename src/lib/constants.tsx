@@ -219,18 +219,18 @@ export const skillGroups = [
 ];
 
 export const experiences = [
-  {
-    name: "EverDream Solution",
-    role: "CEO & Founder",
-    url: "https://linktr.ee/everdreamsolutions",
-    start: "December 2024",
-    end: "Present",
-    shortDescription: [
-      "Established and grew a company providing innovative Web Development, Digital Marketing, SEO & Graphic Designing services.",
-      "Led a team of developers and designers to deliver high-quality software for clients worldwide.",
-      "Focused on incorporating the latest technologies like AI and cloud computing into solutions.",
-    ],
-  },
+  // {
+  //   name: "EverDream Solution",
+  //   role: "CEO & Founder",
+  //   url: "https://linktr.ee/everdreamsolutions",
+  //   start: "December 2024",
+  //   end: "Present",
+  //   shortDescription: [
+  //     "Established and grew a company providing innovative Web Development, Digital Marketing, SEO & Graphic Designing services.",
+  //     "Led a team of developers and designers to deliver high-quality software for clients worldwide.",
+  //     "Focused on incorporating the latest technologies like AI and cloud computing into solutions.",
+  //   ],
+  // },
   {
     name: "Upwork",
     role: "Full Stack Developer",
@@ -297,41 +297,6 @@ export const servicesIcon = [
   {
     icon: Server,
     slug: "deployment_hosting",
-  },
-];
-interface Testimonial {
-  id: number;
-  text: string;
-  author: string;
-  role: string;
-  company: string;
-  image: string;
-}
-
-export const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    text: "Working with Abdul Rehman was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
-    author: "Jackie Williams",
-    role: "Founder & CEO",
-    company: "Dualix",
-    image: "/placeholder.svg",
-  },
-  {
-    id: 2,
-    text: "Working with Abdul Rehman was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
-    author: "Steve Jonas",
-    role: "Founder & CEO",
-    company: "Dualix",
-    image: "/placeholder.svg",
-  },
-  {
-    id: 3,
-    text: "Working with Abdul Rehman was a fantastic experience. They delivered a complete web application that exceeded our expectations in both functionality and design. Their expertise in both front-end and back-end development ensured a seamless user experience. Highly recommend!",
-    author: "Sarah Parker",
-    role: "Founder & CEO",
-    company: "Dualix",
-    image: "/placeholder.svg",
   },
 ];
 

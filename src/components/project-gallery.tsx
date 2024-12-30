@@ -1,11 +1,16 @@
-import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { getProjectsEntries } from "@/lib/contentful";
+import { FeaturedTabs } from "./feature-tabs";
+import { getAllProjects } from "@/sanity/actions/get-all-projects";
+import { getAllCaregories } from "@/sanity/actions/get-all-categories";
+import {
+  ALL_CATEGORY_QUERYResult,
+  ALL_PROJECTS_QUERYResult,
+} from "../../sanity.types";
 
 export const ProjectGallery = async () => {
-  const projectsEntries = await getProjectsEntries();
-  const all_projects = projectsEntries.items;
+  const projectData: ALL_PROJECTS_QUERYResult = await getAllProjects();
+  const categories: ALL_CATEGORY_QUERYResult = await getAllCaregories();
 
   return (
     <section className="py-12">
@@ -31,53 +36,7 @@ export const ProjectGallery = async () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 lg:gap-16">
-        {all_projects.map((project) => {
-          // @ts-ignore
-          const imageUrl = project.fields.image.fields.file.url;
-          // @ts-ignore
-          const imageTitle = project.fields.image.fields.title;
-
-          return (
-            <div
-              key={project.sys.id}
-              className="rounded-lg shadow-lg overflow-hidden"
-            >
-              <Image
-                src={`https:${imageUrl}`} // Prefix with 'https:'
-                alt={imageTitle}
-                width={500}
-                height={500}
-                className="object-cover"
-              />
-              <div className="py-6">
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {project.fields.title as string}
-                </h3>
-                <p className="text-gray-400 text-sm mb-4">
-                  {project.fields.shortDescription as string}
-                </p>
-                <p className="mb-6 leading-5">
-                  <span className="font-medium text-white">
-                    Technology used:
-                  </span>{" "}
-                  <span className="text-sm text-[#8A7FF8]">
-                    {project.fields.technology as string}
-                  </span>
-                </p>
-                <Link href={`/my-work/${project.fields.slug}`}>
-                  <Button
-                    variant="ghost"
-                    className="border border-white hover:bg-gradient-to-br from-[#8A7FF8] to-[#FF3BFF] hover:text-white"
-                  >
-                    Learn More About Project!
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <FeaturedTabs projectData={projectData} categories={categories} />
     </section>
   );
 };

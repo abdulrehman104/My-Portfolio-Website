@@ -249,7 +249,9 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Testimonials | Service | Project | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Category | Slug;
+export type Markdown = string;
+
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Testimonials | Service | Project | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Category | Slug | Markdown;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/actions/get-all-categories.ts
 // Variable: ALL_CATEGORY_QUERY
@@ -382,6 +384,62 @@ export type ALL_TESTIMONIALS_QUERYResult = Array<{
 }>;
 
 // Source: ./src/sanity/actions/get-single-project.ts
+// Variable: PROJECT_BY_ID_QUERY
+// Query: *[_type == "project" && slug.current == $slug] | order(name asc) [0]
+export type PROJECT_BY_ID_QUERYResult = {
+  _id: string;
+  _type: "project";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  shortDescription?: string;
+  images?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  technologiesused?: string;
+  tagLine?: string;
+  projecturl?: string;
+  githuburl?: string;
+  content?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  cta?: string;
+  btn?: string;
+  categories?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "category";
+  }>;
+} | null;
+
+// Source: ./src/sanity/actions/get-single-service.ts
 // Variable: SERVICE_BY_ID_QUERY
 // Query: *[_type == "service" && slug.current == $slug] | order(name asc) [0]
 export type SERVICE_BY_ID_QUERYResult = {
@@ -424,6 +482,7 @@ declare module "@sanity/client" {
     "\n    *[_type == \"project\"] | order(name asc)\n  ": ALL_PROJECTS_QUERYResult;
     "\n    *[_type == \"service\"] | order(name asc)\n  ": ALL_SERVICES_QUERYResult;
     "\n    *[_type == \"testimonials\"] | order(name asc)\n  ": ALL_TESTIMONIALS_QUERYResult;
+    "\n    *[_type == \"project\" && slug.current == $slug] | order(name asc) [0]": PROJECT_BY_ID_QUERYResult;
     "\n    *[_type == \"service\" && slug.current == $slug] | order(name asc) [0]": SERVICE_BY_ID_QUERYResult;
   }
 }

@@ -8,7 +8,7 @@ export const FooterCard = () => {
     <Card className="w-full overflow-hidden relative bg-gradient-to-br from-[#0a0a1f] to-[#0f0f2d] border-0">
       <div className="absolute lg:left-[350px] bottom-0">
         <Image
-          src="/zero.png"
+          src="/web/hero.png"
           alt="Decorative background shape"
           width={800}
           height={800}

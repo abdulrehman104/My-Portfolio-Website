@@ -1515,5 +1515,12 @@
         }
       }
     }
+  },
+  {
+    "name": "markdown",
+    "type": "type",
+    "value": {
+      "type": "string"
+    }
   }
 ]
