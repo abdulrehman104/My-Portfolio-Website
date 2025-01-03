@@ -27,18 +27,38 @@ import {
   SiAuth0,
   SiContentful,
   SiLinktree,
+  SiGraphql,
+  SiEsotericsoftware,
 } from "react-icons/si";
 import {
+  FaCode,
+  FaCogs,
+  FaDatabase,
   FaFacebook,
   FaGithub,
+  FaGlobe,
   FaInstagram,
   FaLinkedin,
+  FaShoppingCart,
   FaTwitter,
 } from "react-icons/fa";
-import { FaThreads } from "react-icons/fa6";
+import { FaThreads, FaX } from "react-icons/fa6";
 import { BiLogoFirebase } from "react-icons/bi";
-import { Globe, Layout, Database, Server, Eye, Boxes } from "lucide-react";
+import {
+  Globe,
+  Layout,
+  Database,
+  Server,
+  Eye,
+  Boxes,
+  Code,
+  ShoppingCart,
+  ServerOff,
+} from "lucide-react";
 import Image from "next/image";
+import { MdSupport } from "react-icons/md";
+import { FiServer } from "react-icons/fi";
+import { TbBrandZoom } from "react-icons/tb";
 
 export const navLinks = [
   {
@@ -275,28 +295,40 @@ export const experiences = [
 
 export const servicesIcon = [
   {
-    slug: "tech_stack",
-    icon: Globe,
+    slug: "consultation_call",
+    icon: FaGlobe,
   },
   {
     slug: "frontend_development",
-    icon: Layout,
+    icon: FaCode,
   },
   {
     slug: "back_end",
-    icon: Database,
+    icon: FaDatabase,
   },
   {
-    icon: Eye,
     slug: "api_integration",
+    icon: SiGraphql,
   },
   {
-    icon: Boxes,
+    slug: "saas_development",
+    icon: FaCogs,
+  },
+  {
+    slug: "ecommerse_development",
+    icon: FaShoppingCart,
+  },
+  {
     slug: "seo_web_performance",
+    icon: SiEsotericsoftware,
   },
   {
-    icon: Server,
     slug: "deployment_hosting",
+    icon: FiServer,
+  },
+  {
+    slug: "maintenance_support",
+    icon: MdSupport,
   },
 ];
 
@@ -321,11 +353,16 @@ export const socialLinks = [
     href: "https://instagram.com/abdul_rehman_104/",
     label: "Instagram",
   },
-  { icon: FaTwitter, href: "https://x.com/AbdulReehman104", label: "Twitter" },
+  { icon: FaX, href: "https://x.com/AbdulReehman104", label: "Twitter" },
   {
     icon: FaThreads,
     href: "https://threads.net/@abdul_rehman_104",
     label: "Threads",
+  },
+  {
+    icon: TbBrandZoom,
+    href: "https://calendly.com/abdulreehman/free-consultation-call",
+    label: "Meeting",
   },
   {
     icon: SiLinktree,

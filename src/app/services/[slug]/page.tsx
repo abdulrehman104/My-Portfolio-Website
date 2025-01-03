@@ -6,10 +6,6 @@ import { getServiceBySlug } from "@/sanity/actions/get-single-service";
 import { SERVICE_BY_ID_QUERYResult } from "../../../../sanity.types";
 import { client } from "@/sanity/lib/client";
 
-type Props = {
-  params: { slug: string };
-};
-
 // Fetching the slugs for all services (Sanity equivalent of `generateStaticParams`)
 export async function generateStaticParams() {
   const query = `*[_type == "services"]{ "slug": slug.current }`;
@@ -20,10 +16,13 @@ export async function generateStaticParams() {
 }
 
 // Main component for a single service page
-export default async function SingleServicePage({ params }: Props) {
-  const service: SERVICE_BY_ID_QUERYResult = await getServiceBySlug(
-    params.slug
-  );
+export default async function SingleServicePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
+  const service: SERVICE_BY_ID_QUERYResult = await getServiceBySlug(slug);
 
   if (!service) {
     return (

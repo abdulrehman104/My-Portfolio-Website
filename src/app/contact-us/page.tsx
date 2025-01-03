@@ -20,6 +20,8 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "@/hooks/use-toast";
+import Link from "next/link";
+import { TbBrandZoom } from "react-icons/tb";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -118,6 +120,17 @@ export default function ContactForm() {
                 <li className="flex items-center">
                   <span className="mr-2">📞</span>
                   <p className="text-gray-300">+92 326 2504906</p>
+                </li>
+                <li>
+                  <Link
+                    href={
+                      "https://calendly.com/abdulreehman/free-consultation-call"
+                    }
+                    className="flex items-center"
+                  >
+                    <TbBrandZoom className="mr-2" size='25' />
+                    <p className="text-gray-300">Lets Schedule a Meeting</p>
+                  </Link>
                 </li>
                 <li className="flex items-center">
                   <HomeIcon className="mr-2" />

@@ -1,6 +1,6 @@
 import { getAllTestonimals } from "@/sanity/actions/get-all-testonimals";
 import { ALL_TESTIMONIALS_QUERYResult } from "../../sanity.types";
-import { CarouselSection } from "./Carousel";
+import { CarouselSection } from "./carousel";
 
 export const TestimonialsSection = async () => {
   const testimonial: ALL_TESTIMONIALS_QUERYResult = await getAllTestonimals();

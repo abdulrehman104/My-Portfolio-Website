@@ -22,6 +22,11 @@ export const serviceType = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "serviceId",
+      type: "number",
+      title: "Service ID",
+    }),
+    defineField({
       name: "tagLine",
       type: "text",
       title: "TagLine",

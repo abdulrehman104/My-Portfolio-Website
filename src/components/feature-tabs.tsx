@@ -17,7 +17,7 @@ type Props = {
 
 export const FeaturedTabs = ({ projectData, categories }: Props) => {
   return (
-    <Tabs defaultValue={categories[3]?.title} className="w-full mb-12">
+    <Tabs defaultValue={categories[0]?.title} className="w-full mb-12">
       {/* Tabs List */}
       <div className="flex justify-center mb-12 overflow-x-auto">
         <TabsList className="h-auto flex flex-wrap justify-center gap-4">

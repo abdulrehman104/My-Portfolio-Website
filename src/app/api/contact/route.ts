@@ -19,9 +19,6 @@ export async function POST(req: Request) {
     const contact = await prismaClient.contact.create({
       data: { name, email, phone, message },
     });
-    if (!contact) {
-      throw new Error("Failed to save contact data to the database.");
-    }
 
     // Configure Nodemailer
     const transporter = nodemailer.createTransport({

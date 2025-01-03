@@ -495,6 +495,13 @@
         },
         "optional": true
       },
+      "serviceId": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
       "tagLine": {
         "type": "objectAttribute",
         "value": {

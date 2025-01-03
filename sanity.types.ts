@@ -98,6 +98,7 @@ export type Service = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  serviceId?: number;
   tagLine?: string;
   shortdescription?: string;
   content?: Array<{
@@ -334,6 +335,7 @@ export type ALL_SERVICES_QUERYResult = Array<{
   _rev: string;
   title?: string;
   slug?: Slug;
+  serviceId?: number;
   tagLine?: string;
   shortdescription?: string;
   content?: Array<{
@@ -362,6 +364,31 @@ export type ALL_SERVICES_QUERYResult = Array<{
 // Variable: ALL_TESTIMONIALS_QUERY
 // Query: *[_type == "testimonials"] | order(name asc)
 export type ALL_TESTIMONIALS_QUERYResult = Array<{
+  _id: string;
+  _type: "testimonials";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  position?: string;
+  shortDescription?: string;
+  images?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+}>;
+
+// Source: ./src/sanity/actions/get-all-testonimals.ts
+// Variable: ALL_TESTONIMALS_QUERY
+// Query: *[_type == "testimonials"] | order(name asc)
+export type ALL_TESTONIMALS_QUERYResult = Array<{
   _id: string;
   _type: "testimonials";
   _createdAt: string;
@@ -450,6 +477,7 @@ export type SERVICE_BY_ID_QUERYResult = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  serviceId?: number;
   tagLine?: string;
   shortdescription?: string;
   content?: Array<{
@@ -481,7 +509,7 @@ declare module "@sanity/client" {
     "\n    *[_type == \"category\"] | order(name asc)\n  ": ALL_CATEGORY_QUERYResult;
     "\n    *[_type == \"project\"] | order(name asc)\n  ": ALL_PROJECTS_QUERYResult;
     "\n    *[_type == \"service\"] | order(name asc)\n  ": ALL_SERVICES_QUERYResult;
-    "\n    *[_type == \"testimonials\"] | order(name asc)\n  ": ALL_TESTIMONIALS_QUERYResult;
+    "\n    *[_type == \"testimonials\"] | order(name asc)\n  ": ALL_TESTIMONIALS_QUERYResult | ALL_TESTONIMALS_QUERYResult;
     "\n    *[_type == \"project\" && slug.current == $slug] | order(name asc) [0]": PROJECT_BY_ID_QUERYResult;
     "\n    *[_type == \"service\" && slug.current == $slug] | order(name asc) [0]": SERVICE_BY_ID_QUERYResult;
   }
