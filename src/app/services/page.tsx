@@ -1,5 +1,4 @@
 import { servicesIcon } from "@/lib/constants";
-import { getServicesEntries } from "@/lib/contentful";
 import { getAllServices } from "@/sanity/actions/get-all-services";
 import Link from "next/link";
 import { ALL_SERVICES_QUERYResult } from "../../../sanity.types";
