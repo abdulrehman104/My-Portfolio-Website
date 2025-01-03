@@ -295,39 +295,39 @@ export const experiences = [
 
 export const servicesIcon = [
   {
-    slug: "consultation_call",
+    slug: "consultation-call",
     icon: FaGlobe,
   },
   {
-    slug: "frontend_development",
+    slug: "frontend-development",
     icon: FaCode,
   },
   {
-    slug: "back_end",
+    slug: "backend-development",
     icon: FaDatabase,
   },
   {
-    slug: "api_integration",
+    slug: "api-integration",
     icon: SiGraphql,
   },
   {
-    slug: "saas_development",
+    slug: "saas-development",
     icon: FaCogs,
   },
   {
-    slug: "ecommerse_development",
+    slug: "ecommerse-development",
     icon: FaShoppingCart,
   },
   {
-    slug: "seo_web_performance",
+    slug: "seo-webperformance",
     icon: SiEsotericsoftware,
   },
   {
-    slug: "deployment_hosting",
+    slug: "deployment-hosting",
     icon: FiServer,
   },
   {
-    slug: "maintenance_support",
+    slug: "maintenance-support",
     icon: MdSupport,
   },
 ];
