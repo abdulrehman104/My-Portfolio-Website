@@ -95,7 +95,7 @@ export const FeaturedTabs = ({ projectData, categories }: Props) => {
                       <Button
                         asChild
                         variant="link"
-                        className="h-auto p-0 text-[#8A7FF8]"
+                        className="hidden md:flex h-auto p-0 text-[#8A7FF8]"
                       >
                         <Link href={project.githuburl} target="_blank">
                           <span className="flex items-center gap-x-2">
