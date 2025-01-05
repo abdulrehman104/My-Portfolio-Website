@@ -78,12 +78,12 @@ export default async function SingleProjectPage({
       </div>
 
       {/* CTA Section */}
-      <section className="text-center space-y-4">
-        <h2 className="text-lg md:text-2xl font-bold text-white mb-4">
+      <section className="text-center space-y-4 max-w-[1300px] md:mx-auto">
+        <h3 className="text-lg font-bold text-white mb-4">
           {project?.cta}
-        </h2>
-        <Link href="/contact-us">
-          <Button className="bg-gradient-to-r from-[#8A7FF8] to-[#FF3BFF] text-white p-6 md:p-8 hover:opacity-90 md:text-lg font-bold">
+        </h3>
+        <Link href="https://calendly.com/abdulreehman/free-consultation-call?month=2025-01">
+          <Button className="bg-gradient-to-r from-[#8A7FF8] to-[#FF3BFF] text-white p-6 text-lg hover:opacity-90 font-bold">
             {project?.btn}
           </Button>
         </Link>

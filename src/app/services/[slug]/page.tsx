@@ -35,7 +35,7 @@ export default async function SingleServicePage({
   return (
     <div className="min-h-screen py-8  overflow-hidden">
       {/* Hero Section */}
-      <div className="relative h-[180px] md:h-[250px] lg:h-[380px]">
+      <div className="relative h-[200px] md:h-[250px] lg:h-[300px]">
         <Image
           src="/web/banner.png"
           alt="Service Banner"
@@ -69,12 +69,10 @@ export default async function SingleServicePage({
       </div>
 
       {/* CTA Section */}
-      <section className="text-center space-y-2">
-        <h2 className="text-lg md:text-2xl font-bold text-white mb-4">
-          {service.cta}
-        </h2>
+      <section className="text-center space-y-4 max-w-[1300px] md:mx-auto">
+        <h3 className="text-lg font-bold text-white mb-4">{service.cta}</h3>
         <Link href="https://calendly.com/abdulreehman/free-consultation-call?month=2025-01">
-          <Button className="bg-gradient-to-r from-[#8A7FF8] to-[#FF3BFF] text-white p-6 md:p-8 hover:opacity-90 md:text-lg font-bold">
+          <Button className="bg-gradient-to-r from-[#8A7FF8] to-[#FF3BFF] text-white p-6 text-lg hover:opacity-90 font-bold">
             {service.btn}
           </Button>
         </Link>
